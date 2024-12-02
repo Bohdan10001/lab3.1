@@ -1,0 +1,35 @@
+#include <iostream>;
+#include <cmath>;
+
+using namespace std;
+int main()
+{
+	double x;
+	double y;
+	double A;
+	double B;
+	cout << "x="; cin >> x;
+
+	A = abs(sin(x));
+	// спосіб 1: розгалуження в скороченій формі
+	if (x < -1)
+		B = sqrt(1 - x) - cos(8) * x;
+	if (-1 <= x <= 0.4)
+		B = atan(x) - sqrt(pow(4 - x, 5));
+	if (x >= 0.4)
+		B = exp(sin(x / 2)) + log(sin(x) + 2);
+	y = A + B;
+	cout << endl;
+	cout << "1) y = " << y << endl;
+	// Спосіб 2: розгалуження в повній формі
+	if (x < -1)
+		B = sqrt(1 - x) - cos(8) * x;
+	else
+		if (-1 <= x <= 0.4)
+			B = atan(x) - sqrt(pow(4 - x, 5));
+		else
+			B = exp(sin(x / 2)) + log(sin(x) + 2);
+	y = A + B;
+	cout << "2) y =" << y << endl;
+	return 0;
+}
